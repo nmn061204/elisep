@@ -1,134 +1,141 @@
-﻿// slideshow
-let slideIndex = 0;
-let timeout;
+﻿document.addEventListener("DOMContentLoaded", function () {
+    // Lấy các phần tử HTML cần thiết
+    var modal = document.querySelector(".canvas-customer-login");
+    var modalMenu = document.querySelector(".header-canvas-menu");
+    var btn = document.querySelector(".header-account");
+    var overLay = document.querySelector(".header-overlay");
+    var btnClose = document.querySelector(".close");
+    var btnClose2 = document.querySelector(".header-overlay");
 
-showSlides();
-
-function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    let dots = document.getElementsByClassName("dot");
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-
-    if (timeout) {
-        clearTimeout(timeout); // Xóa timeout hiện tại
-    }
-
-    timeout = setTimeout(showSlides, 3000); // Đổi ảnh mỗi 2 giây
-}
-
-// Xử lý sự kiện khi người dùng nhấp vào dot
-let dots = document.getElementsByClassName("dot");
-for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", function () {
-        slideIndex = i;
-        showSlides();
+    // Xử lý sự kiện khi người dùng nhấp vào nút mở cửa sổ đăng nhập
+    btn.addEventListener("click", function () {
+        modal.style.right = "0";
+        overLay.style.display = "block";
     });
-}
-// phân trang
-// Lấy danh sách sản phẩm, nút phân trang và nút mũi tên
-const productList = document.querySelector('.list-products');
-const pageButtons = document.querySelectorAll('.page-btn');
-const prevPageButton = document.getElementById('prev-page-btn');
-const nextPageButton = document.getElementById('next-page-btn');
 
-// Số sản phẩm trên mỗi trang
-const productsPerPage = 8;
-let currentPage = 1;
+    // Xử lý sự kiện khi người dùng nhấp vào nút đóng cửa sổ đăng nhập
+    btnClose.addEventListener("click", function () {
+        modal.style.right = "-500px";
+        overLay.style.display = "none";
+    });
 
-// Tính số lượng trang dựa trên số sản phẩm và sản phẩm trên mỗi trang
-let totalProducts = productList.children.length;
-let totalPages = Math.ceil(totalProducts / productsPerPage);
+    // Xử lý sự kiện khi người dùng nhấp vào nút đóng cửa sổ đăng nhập hoặc nền đen mờ
+    btnClose2.addEventListener("click", function () {
+        modal.style.right = "-500px";
+        overLay.style.display = "none";
+    });
 
-// Hiển thị sản phẩm trên trang đầu tiên khi trang web được tải
-showPage(currentPage);
+    // Xử lý slideshow
+    var slideIndex = 0;
+    var timeout;
 
-// Gán sự kiện click cho nút phân trang
-pageButtons.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        if (index === 0) {
-            // Nút "Trang trước"
-            if (currentPage > 1) {
-                currentPage--;
-            }
-        } else if (index === pageButtons.length - 1) {
-            // Nút "Trang tiếp theo"
-            if (currentPage < totalPages) {
-                currentPage++;
-            } else if (currentPage === totalPages && totalProducts % productsPerPage !== 0) {
-                // Tạo thêm trang nếu có sản phẩm dư
-                totalProducts = productList.children.length;
-                totalPages = Math.ceil(totalProducts / productsPerPage);
-                totalPages++;
-                currentPage = totalPages;
-            }
-        } else {
-            // Nút trang
-            currentPage = index;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.querySelectorAll(".slide");
+        var dots = document.querySelectorAll(".dot");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-        showPage(currentPage);
+
+        slideIndex++;
+
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        timeout = setTimeout(showSlides, 3000); // Đổi ảnh mỗi 3 giây
+    }
+
+    // Xử lý sự kiện khi người dùng nhấp vào các dot
+    var dots = document.querySelectorAll(".dot");
+    dots.forEach(function (dot, index) {
+        dot.addEventListener("click", function () {
+            slideIndex = index;
+            showSlides();
+        });
     });
+
+    // Phần phân trang
+    var productList = document.querySelector(".list-products");
+    var pageButtons = document.querySelectorAll(".page-btn");
+
+    var productsPerPage = 8;
+    var currentPage = 1;
+    var totalProducts = productList.children.length;
+    var totalPages = Math.ceil(totalProducts / productsPerPage);
+
+    showPage(currentPage);
+
+    // Xử lý sự kiện khi người dùng nhấp vào nút phân trang
+    pageButtons.forEach(function (button, index) {
+        button.addEventListener("click", function () {
+            if (index === 0) {
+                if (currentPage > 1) {
+                    currentPage--;
+                }
+            } else if (index === pageButtons.length - 1) {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                } else if (currentPage === totalPages && totalProducts % productsPerPage !== 0) {
+                    totalProducts = productList.children.length;
+                    totalPages = Math.ceil(totalProducts / productsPerPage);
+                    totalPages++;
+                    currentPage = totalPages;
+                }
+            } else {
+                currentPage = index;
+            }
+            showPage(currentPage);
+        });
+    });
+
+    // Hiển thị sản phẩm trên trang cụ thể
+    function showPage(page) {
+        for (var i = 0; i < totalProducts; i++) {
+            productList.children[i].style.display = "none";
+        }
+
+        var startIndex = (page - 1) * productsPerPage;
+        var endIndex = Math.min(startIndex + productsPerPage, totalProducts);
+
+        for (var i = startIndex; i < endIndex; i++) {
+            productList.children[i].style.display = "block";
+        }
+
+        pageButtons.forEach(function (button, index) {
+            var buttonPage = parseInt(button.getAttribute("data-page"));
+            if (buttonPage === page) {
+                button.classList.add("active");
+            } else {
+                button.classList.remove("active");
+            }
+        });
+
+        pageButtons.forEach(function (button, index) {
+            if (index === 0 && currentPage === 1) {
+                button.style.display = "none";
+            } else if (index === pageButtons.length - 1 && currentPage === totalPages) {
+                button.style.display = "none";
+            } else if (index === currentPage) {
+                button.classList.add("active");
+            } else {
+                button.style.display = "inline";
+                button.classList.remove("active");
+            }
+        });
+    }
 });
-
-// Hiển thị sản phẩm trên trang cụ thể và ẩn sản phẩm dư
-function showPage(page) {
-    // Ẩn tất cả sản phẩm
-    for (let i = 0; i < totalProducts; i++) {
-        productList.children[i].style.display = 'none';
-    }
-
-    // Tính chỉ mục sản phẩm bắt đầu và kết thúc cho trang hiện tại
-    const startIndex = (page - 1) * productsPerPage;
-    const endIndex = Math.min(startIndex + productsPerPage, totalProducts);
-
-    // Hiển thị sản phẩm trên trang hiện tại
-    for (let i = startIndex; i < endIndex; i++) {
-        productList.children[i].style.display = 'block';
-    }
-    // Đổi màu nút phân trang
-    pageButtons.forEach((button) => {
-        const buttonPage = parseInt(button.getAttribute('data-page'));
-        if (buttonPage === page) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
-    });
-    // Đánh dấu trạng thái của nút phân trang
-    pageButtons.forEach((button, index) => {
-        if (index === 0 && currentPage === 1) {
-            // Ẩn nút "Trang trước" khi ở trang đầu
-            button.style.display = 'none';
-        } else if (index === pageButtons.length - 1 && currentPage === totalPages) {
-            // Ẩn nút "Trang tiếp theo" khi ở trang cuối
-            button.style.display = 'none';
-        } else if (index === currentPage) {
-            // Đánh dấu trang hiện tại
-            button.classList.add('active');
-        } else {
-            button.style.display = 'inline';
-            button.classList.remove('active');
-        }
-    });
-}
-
-
-
-
-

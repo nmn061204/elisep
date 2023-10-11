@@ -3,19 +3,156 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/css/style.css" rel="stylesheet" />
-    <link href="~/Content/font/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div id="header"></div>
-   
+    <header class="header">
+        <div class="middle-content">
+            <div class="d-flex justify-content-between align-items-center ">
+                <div class="header-left d-flex align-items-center">
+                    <div class="action-menu-responsive">
+                        <div class="action nav-togger">
+                        </div>
+                    </div>
+                    <strong class="logo">
+                        <img src="https://elise.vn/media/logo/default/logo_color.png" alt="Elise - Exclusive" width="167"
+                             height="28" />
+                    </strong>
+                </div>
+                <div class="header-center d-flex">
+                    <div class="search-form">
+                        <div class="form-search d-flex align-items-center">
+                            <form action="" class="form minisearch" id="search_mini_form">
+                                <span class="title-search">Tìm Kiếm</span>
+                                <input id="search" class="input-text" type="text" maxlength="128" />
+                                <button type="submit" title="Tìm Kiếm" class="button" disabled="">
+                                    <i class="fa-solid fa-magnifying-glass fs-21"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right d-flex flex-end align-items-center">
+                    <div class="header-phone" data-role="stringee-area">
+                        <div class="stringee-call-action d-flex align-items-center">
+                            <i class="fa-solid fa-phone-flip fs-21 mr-10"></i><span>Gọi Ngay</span>
+                        </div>
+                    </div>
+
+                    <div class="header-account ">
+                        <div class=" is-canvas">
+                            <span class="label"><i class="fa-regular fa-user fs-21 mr-10"></i></i>Tài Khoản</span>
+                        </div>
+                    </div>
+
+                    <div class="cart">
+                        <i class="fa-solid fa-bag-shopping fs-21"></i>
+                    </div>
+                    <div class="follow">
+                        <i class="fa-regular fa-heart fs-21 hv"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="header-wrapper-end">
+
+        <div class="canvas canvas-customer-login">
+            <div class="close"><i class="fa-solid fa-xmark"></i></i></div>
+            <div class="canvas-content-wrapper">
+                <div class="title uppercase"><span>Đăng nhập</span></div>
+                <div class="create-account">
+                    <span>Bạn chưa có tài khoản?</span><a href="#" class="underline">Tạo tài khoản</a>
+                </div>
+            </div>
+            <form class="form form-login myaccount-form-login" action="https://elise.vn/customer/account/loginPost/"
+                  method="post" id="login-form" novalidate="novalidate">
+                <input name="form_key" type="hidden" value="LPxjP7jomw24ewTt">
+                <div class="field-control email required">
+                    <input name="username" placeholder="Địa chỉ email hoặc số điện thoại của bạn" value="" autocomplete="off"
+                           id="email" type="text" class="input-text" title="Email">
+                </div>
+                <div class="field-control password required">
+                    <input name="password" placeholder="Mật khẩu" type="password" autocomplete="off" class="input-text" id="pass"
+                           title="Mật khẩu">
+                </div>
+                <div class=" action remind">
+                    <a href="" class="underline">Quên mật khẩu?</a>
+                </div>
+                <div class="field choice mgs-gdpr-checkbox d-flex flex-start" style="margin-top: 10px;">
+                    <input type="checkbox" style="width: 30px;margin-top: 5px;">
+                    <label for="accept_gdpr" class="label">
+                        <span>
+                            Tôi đồng ý Điều kiện - Điều khoản &amp; Chính sách bảo mật của
+                            Elise.
+                        </span>
+                    </label>
+                </div>
+                <div class="actions-toolbar">
+                    <button type="submit" class="action btn-login uppercase" name="send" id="send2">
+                        <span>Đăng nhập</span>
+                    </button>
+                </div>
+                </fieldset>
+            </form>
+            <div class="myaccount-socials-login">
+                <div class="btn-login-social login-facebook uppercase">
+                    <a href="#" style="text-decoration: none;">
+                        <i class="fab fa-facebook-f"></i><span>
+                            Đăng nhập bằng
+                            facebook
+                        </span>
+                    </a>
+                </div>
+                <div class="btn-login-social login-google uppercase">
+                    <a href="#" style="text-decoration: none;">
+                        <i class="fab fa-google-plus-g"></i><span>
+                            Đăng nhập bằng
+                            google
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="header-overlay"></div>
+    </section>
+
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="~/Content/img/cv-2909.jpg" class="img-side" />
+        </div>
+        <div class="slide fade">
+            <img src="~/Content/img/cv-denim.jpg" class="img-side" />
+        </div>
+        <div class="slide fade">
+            <img src="~/Content/img/cv-ex.png" class="img-side" />
+        </div>
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
     <div id="container">
-        
+
         <div class="content">
             @RenderBody()
         </div>
-        
+
     </div>
     <script src="~/Scripts/js/main.js"></script>
 </body>

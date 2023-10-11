@@ -183,6 +183,7 @@
     <Content Include="Views\Shared\_MasterLayoutPage.cshtml" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\InfoProduct.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
