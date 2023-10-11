@@ -113,9 +113,9 @@ body {
     font-weight: 500;
 }
 
-    .category-item:hover {
-        color: #ff532d;
-    }
+.category-item:hover {
+    color: #ff532d;
+}
 
 .all-product__category-item {
     color: #000;
@@ -243,12 +243,12 @@ icon-product:hover {
     border-radius: 20px;
 }
 
-    .page-btn.active {
-        background-color: #ff532d;
-        color: #fff;
-    }
+.page-btn.active {
+    background-color: #ff532d;
+    color: #fff;
+}
 
-    .page-btn:hover {
-        background-color: #ff532d;
-        color: #fff;
-    }
+.page-btn:hover {
+    background-color: #ff532d;
+    color: #fff;
+}

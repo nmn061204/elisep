@@ -9,48 +9,13 @@
 </head>
 <body>
     <div id="header"></div>
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img src="~/Content/img/cv-2909.jpg" class="img-side" />
-        </div>
-        <div class="slide fade">
-            <img src="~/Content/img/cv-denim.jpg" class="img-side" />
-        </div>
-        <div class="slide fade">
-            <img src="~/Content/img/cv-ex.png" class="img-side" />
-        </div>
-        <div class="dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-
+   
     <div id="container">
-        <div class="categories">
-            <h2>
-                <i class=" icon-menu__categories fa-solid fa-bars"></i>
-                <span class="categories-tittle">Danh mục</span>
-            </h2>
-            <ul class="category">
-                <li class="category-item">Home</li>
-                <ul class="category-item">
-                    all product
-                    <li class="all-product__category-item">Áo</li>
-                    <li class="all-product__category-item">Quần</li>
-                    <li class="all-product__category-item">Giày</li>
-                    <li class="all-product__category-item">Dép</li>
-                    <li class="all-product__category-item">Balo</li>
-                </ul>
-            </ul>
-            <ul class="category">
-                <li class="category-item">Top Sellers</li>
-                <li class="category-item">SALE 50% OFF</li>
-            </ul>
-        </div>
+        
         <div class="content">
-            @RenderBody();
+            @RenderBody()
         </div>
+        
     </div>
     <script src="~/Scripts/js/main.js"></script>
 </body>
