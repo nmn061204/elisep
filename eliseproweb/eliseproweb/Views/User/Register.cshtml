@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Tạo mới tài khoản khách hàng";
+}
+
+<form action="" class="form-create-account">
+    <h3 class="title uppercase">
+        Thông tin cá nhân
+    </h3>
+    <div style="margin: 54px 0;">
+        <div class="row-input">
+            <div class="control">
+                <input type="text" placeholder="Email" class="input-text">
+            </div>
+        </div>
+        <div class="row-input">
+            <div class="control ">
+                <input type="password" placeholder="Mật khẩu" class="input-text">
+            </div>
+            <div class="control ">
+                <input type="password" placeholder="Nhập lại mật khẩu" class="input-text">
+            </div>
+        </div>
+        <div class="row-input">
+            <div class="control ">
+                <input type="text" placeholder="Tên" class="input-text">
+            </div>
+            <div class="control ">
+                <input type="text" placeholder="Họ" class="input-text">
+            </div>
+        </div>
+
+        <div class="row-input">
+            <div class="control ">
+                <input type="text" placeholder="Vui lòng chọn thành phố của bạn" class="input-text">
+            </div>
+            <div class="control ">
+                <input type="text" placeholder="Vui lòng chọn quận/huyện của bạn" class="input-text">
+            </div>
+        </div>
+
+        <div class="row-input">
+            <div class="control ">
+                <input type="text" placeholder="Địa chỉ" class="input-text">
+            </div>
+            <div class="control ">
+                <input type="text" placeholder="Ghi chú" class="input-text">
+            </div>
+        </div>
+
+        <div class="row-input">
+            <div class="control ">
+                <label for="" class="label">
+                    <span>Quốc gia</span>
+                </label>
+                <input type="text" value="Việt Nam" disabled class="input-text">
+            </div>
+            <div class="control ">
+                <label for="" class="label">
+                    <span>Số điện thoại</span>
+                </label>
+                <div class="">
+                    <span style="color:#333">+84</span>
+                    <input type="text" placeholder="Điện thoại" class="input-text ms-6"
+                           style="margin-left: 32px; max-width:418px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="group-checkbox">
+        <div class="myemail-check">
+            <input type="checkbox">
+            <span>Nhận tin tức và khuyến mại mới nhất từ Elise qua email</span>
+        </div>
+        <div class="privacy-statement-check">
+            <input type="checkbox">
+            <span>Tôi đồng ý </span><a href=""> Điều kiện - Điều khoản & Chính sách bảo mật của Elise</a>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <button type="submit" class=" uppercase" title="Tạo tài khoản">
+            <span>Tạo tài khoản</span>
+        </button>
+    </div>
+</form>
+
