@@ -11,17 +11,121 @@ html {
 
 
 /* comom */
+.backgroud-1 {
+    background-image: url(//bizweb.dktcdn.net/100/376/737/themes/894814/assets/bg_danhmuc.jpg?1676271560514);
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+/* sale */
+.sale {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgb(156, 255, 143), 0 0 30px rgb(105, 229, 238);
+    animation: colorChange 2s infinite;
+}
 
-/*  */
+@keyframes colorChange {
+    0% {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    50% {
+        color: (255, 255, 255, 1);
+    }
+
+    100% {
+        color: rgb(255, 255, 255, 1);
+    }
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    /* Độ rộng phần tam giác */
+    border-left: 20px solid #ff532d;
+    border-right: 20px solid #ff532d; /* Độ rộng phần tam giác */
+    border-bottom: 10px solid transparent; /* Màu sắc và chiều cao của tam giác */
+    box-shadow: 2px 0px 0px 0 rgba(0, 0, 0, 0.5);
+}
+/* color */
+.color-text {
+    color: #727272;
+}
+
+.bgcolor-primary {
+    background-color: #ff532d !important;
+}
+
+.color-primary {
+    color: #ff532d !important;
+}
+
+.no-line-break {
+    white-space: nowrap;
+}
+/* opacity */
+.opacity-90 {
+    opacity: 0.9;
+}
+/* font size */
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
 .fs-21 {
     font-size: 21px;
     color: #4e4e4e;
     cursor: pointer;
 }
 
+.fs-48 {
+    font-size: 48px;
+}
+
 .mr-10 {
     margin-right: 10px;
 }
+/* hover */
+
+.text-hover:hover {
+    color: #ff532d !important;
+}
+
+.category-hover {
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+    .category-hover:hover {
+        color: #ff532d !important;
+        cursor: pointer;
+        transform: translateX(6px); /* Di chuyển phần tử sang phải 50px khi di chuột vào */
+    }
+/* border */
+.border-none {
+    border: none !important;
+}
+
+.image {
+    transition: transform 0.5s;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-text {
+    cursor: text;
+}
+
+.image:hover {
+    transform: scale(1.1); /* Điều chỉnh tỷ lệ phóng to tùy ý */
+}
+
+/*  */
 
 body {
 }
@@ -459,6 +563,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .dot {
     height: 12px;
     width: 12px;
@@ -483,26 +593,27 @@ body {
     }
 }
 
+
 /* product */
 
 #container {
     max-width: 100%;
-    margin:0 300px;
 }
 
 .content {
     display: grid;
-    width: 100%;
+    max-width: 100%;
+    margin: 0 300px;
 }
 
 .arival-text {
-    font-size: 1.875rem;
+    font-size: 3rem;
     font-weight: 400;
     font-family: 'Helvetica Neue', sans-serif;
     padding: 15px 0;
-    margin:30px 0;
+    margin: 30px 0;
     width: 100%;
-    text-align:center;
+    text-align: center;
 }
 
 .list-products {
@@ -512,14 +623,12 @@ body {
 }
 
 .product-card {
-    width: 300px;
-}
-
-.image-container {
-    position: relative;
-    width: 100%;
+    width: 19rem;
+    border-radius: 5px;
     overflow: hidden;
 }
+
+
 
 .product-image__item {
     width: 100%;
@@ -590,7 +699,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .page-btn {
@@ -602,10 +711,10 @@ body {
     border-radius: 20px;
 }
 
-.page-btn.active {
-    background-color: #ff532d;
-    color: #fff;
- }
+    .page-btn.active {
+        background-color: #ff532d;
+        color: #fff;
+    }
 
     .page-btn:hover {
         background-color: #ff532d;
@@ -735,12 +844,13 @@ body {
     width: 200px; /* Độ rộng của khung thông tin công ty */
     font-size: 20px;
 }
-.fbp a,
-.fbg a{
-    font-size:16px;
-    text-decoration:none;
-    color:#666;  
-}
+
+    .fbp a,
+    .fbg a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #666;
+    }
 
 .fbp {
     display: inline-block;
